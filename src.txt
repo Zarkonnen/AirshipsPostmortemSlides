@@ -1,0 +1,72 @@
+Airships: Conquer the Skies Postmortem
+The Game
+- Build 2D Steampunk airships
+- Fight with them vs other players and monsters
+- Conquer the world
+editor.png
+battle.png
+map.png
+Inspirations
+- FTL: Faster than Light
+- Cortex Command (Worms)
+- Dwarf Fortress (Hi!)
+Development
+- Solo developer
+- 5 years development time
+- 4+ years early access
+Outcome
+- 80 000+ copies sold
+- "Overwhelmingly Positive"
+- 9 000+ Steam workshop items
+steam.png
+workshop.png
+Postmortem
+- What went well
+- What went badly
+- Debatables
+What went well
+- Java
+- Lockstep multiplayer
+- Modding system
+What went well
+- Early access
+- YouTube
+- Community building (eventually)
+What went badly
+- Scope and dev time
+- Performance problems
+- Lack of user testing
+What went badly
+- Not much press coverage
+- Multiplayer chicken-and-egg
+Debatables
+- Working (mostly) by myself
+- Overscoped, but what should have been cut?
+What could have been cut?
+- Tiles vs Modules
+- Flipping
+flipping.png
+What could have been cut?
+- Detailed crew entities
+- Boarding
+crew.png
+What could have been cut?
+- Landships
+landships.png
+What could have been cut?
+- Monsters
+squid.png
+What could have been cut?
+- Challenge missions
+- Multiplayer
+If I removed all of these...
+- Would it have been successful?
+- Would it have lost its appeal?
+- Or would it have been more coherent?
+Conclusions?
+- Scope your game! (But don't squash the weird magic.)
+- User test early and often!
+- Marketing is a moving target!
+Info! Questions?
+- zarkonnen@gmail.com
+- zarkonnen.com/airships

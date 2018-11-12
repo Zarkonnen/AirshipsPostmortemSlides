@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> Airships: Conquer the Skies Postmortem
+</title>
+<style>
+html {
+    cursor: none;
+}
+body {
+    font-family: "Liberation Sans", no-serif;
+    background-color: #241711;
+    color: white;
+}
+#image {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+#title {
+    font-family: Fledermaus;
+    color: #f5e474;
+    font-size: 700%;
+    margin-top: 11vw;
+    margin-bottom: 1em;
+    margin-left: 15%;
+}
+#points {
+    padding: 0;
+    margin: 0;
+    width: 70%;
+    margin-left: 15%;
+    font-size: 400%;
+}
+#points li {
+    list-style: none;
+    margin-bottom: 1em;
+}
+</style>
+<script>
+var slides = [{"points": [], "title": "Airships: Conquer the Skies Postmortem"}, {"points": ["Build 2D Steampunk airships", "Fight with them vs other players and monsters", "Conquer the world"], "title": "The Game"}, {"image": "editor.png", "points": [], "title": "editor.png"}, {"image": "battle.png", "points": [], "title": "battle.png"}, {"image": "map.png", "points": [], "title": "map.png"}, {"points": ["FTL: Faster than Light", "Cortex Command (Worms)", "Dwarf Fortress (Hi!)"], "title": "Inspirations"}, {"points": ["Solo developer", "5 years development time", "4+ years early access"], "title": "Development"}, {"points": ["80 000+ copies sold", "\"Overwhelmingly Positive\"", "9 000+ Steam workshop items"], "title": "Outcome"}, {"image": "steam.png", "points": [], "title": "steam.png"}, {"image": "workshop.png", "points": [], "title": "workshop.png"}, {"points": ["What went well", "What went badly", "Debatables"], "title": "Postmortem"}, {"points": ["Java", "Lockstep multiplayer", "Modding system"], "title": "What went well"}, {"points": ["Early access", "YouTube", "Community building (eventually)"], "title": "What went well"}, {"points": ["Scope and dev time", "Performance problems", "Lack of user testing"], "title": "What went badly"}, {"points": ["Not much press coverage", "Multiplayer chicken-and-egg"], "title": "What went badly"}, {"points": ["Working (mostly) by myself", "Overscoped, but what should have been cut?"], "title": "Debatables"}, {"points": ["Tiles vs Modules", "Flipping"], "title": "What could have been cut?"}, {"image": "flipping.png", "points": [], "title": "flipping.png"}, {"points": ["Detailed crew entities", "Boarding"], "title": "What could have been cut?"}, {"image": "crew.png", "points": [], "title": "crew.png"}, {"points": ["Landships"], "title": "What could have been cut?"}, {"image": "landships.png", "points": [], "title": "landships.png"}, {"points": ["Monsters"], "title": "What could have been cut?"}, {"image": "squid.png", "points": [], "title": "squid.png"}, {"points": ["Challenge missions", "Multiplayer"], "title": "What could have been cut?"}, {"points": ["Would it have been successful?", "Would it have lost its appeal?", "Or would it have been more coherent?"], "title": "If I removed all of these..."}, {"points": ["Scope your game! (But don't squash the weird magic.)", "User test early and often!", "Marketing is a moving target!"], "title": "Conclusions?"}, {"points": ["zarkonnen@gmail.com", "zarkonnen.com/airships"], "title": "Info! Questions?"}] ;
+</script>
+<script>
+var index = 0;
+function showSlide() {
+    if (slides[index].image) {
+        document.getElementById("title").innerHTML = "";
+        document.getElementById("image").src = slides[index].image;
+        document.getElementById("image").style.display = "block";
+    } else {
+        document.getElementById("title").innerHTML = slides[index].title;
+        document.getElementById("image").style.display = "none";
+    }
+    document.getElementById("points").innerHTML = slides[index].points.map(function(p) {
+        return "<li>" + p + "</li>";
+    }).join("");
+}
+
+function next() {
+    if (index < slides.length - 1) {
+        index++;
+        showSlide();
+    }
+}
+
+function prev() {
+    if (index > 0) {
+        index--;
+        showSlide();
+    }
+}
+
+function keyup(event) {
+    if (event.code == "ArrowLeft") {
+        prev();
+    } else if (event.code == "ArrowRight" || event.code == "Space") {
+        next();
+    }
+}
+</script>
+</head>
+<body onClick="next()" onKeyUp="keyup(event)">
+<img id="image">
+<div id="title"></div>
+<ul id="points"></ul>
+<script>
+showSlide();
+</script>
+</body>
+</html>
+
